@@ -1,1 +1,26 @@
 // Sass Mixins
+// clearfix for floats
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+// px to rem
+// use _function instead
+@mixin font-size($px) {
+    font-size: ($px / 10) * 1rem;
+}
+
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin zoom-logo {
+    animation: scaleZoom 2s ease;
+}
