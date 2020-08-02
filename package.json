@@ -1,0 +1,23 @@
+{
+  "name": "7-in-1-sass_template",
+  "version": "1.0.0",
+  "description": "This is a sample project using the [7-1 architecture pattern](http://sass-guidelin.es/#architecture) and sticking to [Sass Guidelines](http://sass-guidelin.es) writing conventions.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  },
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/main.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KimVesperia/7-in-1-Sass_Template.git"
+  },
+  "author": "Kim Phung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KimVesperia/7-in-1-Sass_Template/issues"
+  },
+  "homepage": "https://github.com/KimVesperia/7-in-1-Sass_Template#readme"
+}
