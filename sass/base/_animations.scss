@@ -2,6 +2,7 @@
 
 /* KEYFRAMES */
 
+// for logo
 @keyframes scaleZoom {
     /* browser performance best with only 2 different properties max */
     0% {
@@ -14,6 +15,23 @@
 
     100% {
         transform: scale(1);
+    }
+}
+
+// for btt
+@keyframes moveInbtt {
+    /* browser performance best with only 2 different properties max */
+    0% {
+        transform: translateX(15rem);
+    }
+
+    80% {
+        /* transform: translateX(0px); */
+    }
+
+    100% {
+        /* default final state */
+        transform: translate(0);
     }
 }
 
