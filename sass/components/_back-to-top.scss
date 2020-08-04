@@ -1,11 +1,11 @@
 /* scroll to top btn, hide by default */
 // wrapper
-.back-to-top {
+.btt {
     // relative for the footer effect
     position: relative;
 }
 
-.btt {
+.btt__sticky {
 
     &,
     &:link,
@@ -27,21 +27,22 @@
 
     &:hover {
         opacity: 1;
-        // color: $color-primary;
-        // background-color: rgba($color-primary-dark, .2);
-        // border: .1rem solid $color-primary;
+        color: $color-primary;
+        background-color: rgba($color-primary-dark, .2);
+        border: .1rem solid $color-primary;
         transition: all .2s;
     }
 
-    // hide by default
-    &__icon {
-        display: none;
-    }
+}
 
-    // show when btt is active
-    & &__icon {
-        // icon size
-        font-size: 3rem;
-        display: inline-block;
-    }
+// hide by default
+.btt__icon {
+    display: none;
+}
+
+// show when btt is active
+.btt__sticky .btt__icon {
+    // icon size
+    font-size: 3rem;
+    display: inline-block;
 }
