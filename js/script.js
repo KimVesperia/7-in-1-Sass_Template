@@ -16,14 +16,17 @@ $(document).ready(function() {
     $(".main").waypoint(function(direction) {
         // if user scrolls down/up the section
         if (direction == "down") {
-            // add class btt (back to top) with fade
+            // add class btt__sticky (back to top) with fade
             $(".js--wp-back").fadeIn("fast", function() {
-                $(this).addClass("btt");
+                $(this).addClass("btt__sticky");
+                // reapply animation, because other wp
+                $(".btt__sticky").css("animation", "moveInbtt 2s ease");
             });
         } else {
             // remove the class when back on top with fade
             $(".js--wp-back").fadeOut("slow", function() {
-                $(this).removeClass("btt");
+                $(this).removeClass("btt__sticky");
+                $(".btt__sticky").css("animation", "moveInbtt 2s ease");
             });
         }
     }, {
@@ -35,15 +38,19 @@ $(document).ready(function() {
     $("section").last().waypoint(function(direction) {
         // if user scrolls down/up the section
         if (direction == "down") {
-            // add class btt (back to top) with fade
-            $(".btt").css("position", "absolute");
-            $(".btt").css("bottom", "0");
-            $(".btt").css("right", "5%");
+            // stop before footer
+            $(".btt").insertBefore($(".footer"));
+            // remove animation, because only needed at heading
+            $(".btt__sticky").css("animation", "none");
+            // stick on top of footer
+            $(".btt__sticky").css("position", "absolute");
+            $(".btt__sticky").css("bottom", "0");
+            $(".btt__sticky").css("right", "5%");
         } else {
-            // remove the class when back on top with fade
-            $(".btt").css("position", "fixed");
-            $(".btt").css("bottom", "5%");
-            $(".btt").css("right", "5%");
+            // back to fixed when scrolled up
+            $(".btt__sticky").css("position", "fixed");
+            $(".btt__sticky").css("bottom", "5%");
+            $(".btt__sticky").css("right", "5%");
         }
     }, {
         // delay
