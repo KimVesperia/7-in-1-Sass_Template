@@ -6,8 +6,11 @@
 $(document).ready(function() {
 
     // reload the page
+    // remove # url
     $(".js--reload").click(function () { 
-        location.reload();
+        if (window.location.href.indexOf('#') > -1) {
+            window.location.href = window.location.pathname;
+        }
     });
 
     // sticky plugin waypoint
