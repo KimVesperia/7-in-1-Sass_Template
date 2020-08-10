@@ -14,5 +14,7 @@ npm install concat --save-dev
 
 npm install autoprefixer --save-dev
 
+npm install postcss-cli --save-dev
+
 Ignore node modules:
 touch .gitignore && echo "node_modules/" >> .gitignore && git rm -r --cached node_modules ; git status
