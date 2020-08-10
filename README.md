@@ -16,5 +16,7 @@ npm install autoprefixer --save-dev
 
 npm install postcss-cli --save-dev
 
+npm install npm-run-all --save-dev
+
 Ignore node modules:
 touch .gitignore && echo "node_modules/" >> .gitignore && git rm -r --cached node_modules ; git status
