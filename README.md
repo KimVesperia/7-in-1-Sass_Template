@@ -20,6 +20,7 @@ npm install npm-run-all --save-dev
 
 Example scripts:
   "scripts": {
+  
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "devserver": "live-server",
     "start": "npm-run-all --parallel devserver watch:sass",
