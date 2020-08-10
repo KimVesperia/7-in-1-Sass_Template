@@ -10,5 +10,7 @@ npm init
 
 npm install node-sass --save-dev
 
+npm install concat --save-dev
+
 Ignore node modules:
 touch .gitignore && echo "node_modules/" >> .gitignore && git rm -r --cached node_modules ; git status
