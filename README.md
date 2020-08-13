@@ -36,6 +36,9 @@ Ignore node modules (admin):
 touch .gitignore && echo "node_modules/" >> .gitignore && git rm -r --cached node_modules ; git status
 
 To update:
+
 npm install -g npm-check-updates
+
 ncu -u
-npm instal
+
+npm install
