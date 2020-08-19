@@ -10,6 +10,8 @@ npm init
 
 npm install node-sass --save-dev
 
+#Scripts
+
 npm install concat --save-dev
 
 npm install autoprefixer --save-dev
