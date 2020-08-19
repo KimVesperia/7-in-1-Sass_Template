@@ -8,12 +8,6 @@
     }
 }
 
-// px to rem
-// use _function instead
-@mixin font-size($px) {
-    font-size: ($px / 10) * 1rem;
-}
-
 @mixin absolute-center {
     position: absolute;
     top: 50%;
@@ -21,8 +15,27 @@
     transform: translate(-50%, -50%);
 }
 
-@mixin zoom-logo {
-    animation: scaleZoom 2s ease;
+@mixin pulse-logo {
+    animation: pulsate-1 2s ease;
+}
+
+@mixin center-block {
+    margin: 0 auto;
+}
+
+@mixin same-dim($dim) {
+    height: $dim;
+    width: $dim;
+}
+
+@mixin transition {
+    transition: all .2s;
+}
+
+@mixin outline-default {
+    outline: none;
+    box-shadow: 0 .1rem 1rem rgba(var(--color-primary-rgba), 1);
+    transition: all .5s;
 }
 
 // MEDIA QUERY MANAGER
@@ -30,13 +43,14 @@
 
 $breakpoint argument choices:
 max-width
-0 - 600px:      phone
-600 - 900px:    tab-port
-900 - 1200px:   tab-land
+000 - 500px:    $bp-500
+500 - 600px:    $bp-500
+600 - 900px:    $bp-900
+900 - 1200px:   $bp-1200
 [1200 - 1800]:   normal styles
 
 min-width
-1800px + :      big-desktop
+1800px + :      $bp-1800
 
 
 NOTES
@@ -52,19 +66,23 @@ ORDER: Base + typography > general layout + grid > page layout > component
 
 // if directive with content
 @mixin respond($breakpoint) {
-    @if $breakpoint == phone {
+    @if $breakpoint == $bp-500 {
+        @media only screen and (max-width: 31.25em) {@content}; //600px
+    }
+
+    @if $breakpoint == $bp-600 {
         @media only screen and (max-width: 37.5em) {@content}; //600px
     }
 
-    @if $breakpoint == tab-port {
+    @if $breakpoint == $bp-900 {
         @media only screen and (max-width: 56.25em) {@content}; //900px
     }
 
-    @if $breakpoint == tab-land {
+    @if $breakpoint == $bp-1200 {
         @media only screen and (max-width: 75em) {@content}; //1200px
     }
 
-    @if $breakpoint == big-desktop {
+    @if $breakpoint == $bp-1800 {
         @media only screen and (min-width: 112.5em) {@content}; //1800px
     }
 }
@@ -72,11 +90,11 @@ ORDER: Base + typography > general layout + grid > page layout > component
 // USAGE
 // Desktop first: big to low because last one will apply
 /*
-    @include respond(big-desktop) { // min-width > 1800
+    @include respond($bp-1800) { // min-width > 1800
         font-size: 75%; //1rem = 12px, 12/16 = 75%
     }
 
-    @include respond(tab-land) { // max-width < 1200
+    @include respond($bp-1200) { // max-width < 1200
         font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%
     }
 */
