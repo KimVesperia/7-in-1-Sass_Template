@@ -8,11 +8,12 @@
     /* remove all the default margins and paddings */
     margin: 0;
     padding: 0;
-    /* inherit from body and apply everywhere  */
+    /* inherit from html and apply everywhere  */
     box-sizing: inherit;
 }
 
 html {
+    box-sizing: border-box;
     // this defines what 1rem is
     /* root font size */
     /* 1rem = 10px */
@@ -24,6 +25,5 @@ html {
 
 /* inheritance inside body */
 body {
-    /* borders and paddings removed from width and height  */
-    box-sizing: border-box;
+    min-height: 100vh;
 }
