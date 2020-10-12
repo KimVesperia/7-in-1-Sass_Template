@@ -12,5 +12,21 @@ $(document).ready(function() {
             window.location.href = window.location.pathname;
         }
     });
+    
+    // clone the title once
+    $flag = true;
+    if($flag) {  
+        $name = document.title; 
+        $flag=false;  
+    }
+
+    $(window).focus(function() {
+        document.title = $name;
+    });
+    
+    // change title after delay and when tab is not focused
+    $(window).blur(function() {
+        setTimeout(function() { document.title = "Come back soon!"; }, 5000);
+    });
 
 });
