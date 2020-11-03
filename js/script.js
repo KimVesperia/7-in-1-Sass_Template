@@ -26,7 +26,7 @@ $(document).ready(function() {
     
     // change title after delay and when tab is not focused
     $(window).blur(function() {
-        setTimeout(function() { document.title = "Come back soon!"; }, 5000);
+        setTimeout(function() { document.title = "Come back soon!"; }, 15000);
     });
 
 });
