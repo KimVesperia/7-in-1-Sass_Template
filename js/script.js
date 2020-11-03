@@ -12,6 +12,9 @@ $(document).ready(function() {
             window.location.href = window.location.pathname;
         }
     });
+	
+	// dynamic copyright
+    $(".copyright").append("Copyright &copy; " + (new Date).getFullYear() + " by Kim Phung. All rights reserved."); 
     
     // clone the title once
     $flag = true;
