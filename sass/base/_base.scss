@@ -27,3 +27,13 @@ html {
 body {
     min-height: 100vh;
 }
+
+a,
+button,
+.btn {
+    &:focus,
+    &:focus::before,
+    &:focus::after {
+        @include outline;
+    }
+}
