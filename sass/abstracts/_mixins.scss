@@ -71,15 +71,31 @@ ORDER: Base + typography > general layout + grid > page layout > component
 // if directive with content
 @mixin respond($breakpoint) {
     @if $breakpoint == $bp-500 {
-        @media only screen and (max-width: 31.25em) {@content}; //600px
+        @media only screen and (max-width: 31.25em) {@content}; //500px
     }
 
     @if $breakpoint == $bp-600 {
         @media only screen and (max-width: 37.5em) {@content}; //600px
     }
 
+    @if $breakpoint == $bp-700 {
+        @media only screen and (max-width: 43.75em) {@content}; //700px
+    }
+
+    @if $breakpoint == $bp-800 {
+        @media only screen and (max-width: 50em) {@content}; //800px
+    }
+
     @if $breakpoint == $bp-900 {
         @media only screen and (max-width: 56.25em) {@content}; //900px
+    }
+
+    @if $breakpoint == $bp-1000 {
+        @media only screen and (max-width: 62.5em) {@content}; //1000px
+    }
+
+    @if $breakpoint == $bp-1100 {
+        @media only screen and (max-width: 68.75em) {@content}; //1100px
     }
 
     @if $breakpoint == $bp-1200 {
@@ -94,11 +110,11 @@ ORDER: Base + typography > general layout + grid > page layout > component
 // USAGE
 // Desktop first: big to low because last one will apply
 /*
-    @include respond($bp-1800) { // min-width > 1800
+    @include respond($bp-1800) { // min-width > 1800px
         font-size: 75%; //1rem = 12px, 12/16 = 75%
     }
 
-    @include respond($bp-1200) { // max-width < 1200
+    @include respond($bp-1200) { // max-width < 1200px
         font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%
     }
 */

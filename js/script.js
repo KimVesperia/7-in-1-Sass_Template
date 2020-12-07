@@ -1,6 +1,6 @@
 // jQuery
 
-// MINIFY HERE: https://www.minifier.org/
+// MINIFY HERE: https://javascript-minifier.com/
 
 // Use ready() to make a function available after the document is loaded
 $(document).ready(function() {
@@ -63,27 +63,27 @@ $(document).ready(function() {
     });
 
     // the last section / before the footer
-    $("section").last().waypoint(function(direction) {
-        // if user scrolls down/up the section
-        if (direction == "down") {
-            // stop before footer
-            $(".btt").insertBefore($(".footer"));
-            // remove animation, because only needed at heading
-            $(".btt__sticky").css("animation", "none");
-            // stick on top of footer
-            $(".btt__sticky").css("position", "absolute");
-            $(".btt__sticky").css("bottom", "0");
-            $(".btt__sticky").css("right", "5vw");
-        } else {
-            // back to fixed when scrolled up
-            $(".btt__sticky").css("position", "fixed");
-            $(".btt__sticky").css("bottom", "5vw");
-            $(".btt__sticky").css("right", "5vw");
-        }
-    }, {
-        // delay
-        offset: "70rem"
-    });
+    // $("section").last().waypoint(function(direction) {
+    //     // if user scrolls down/up the section
+    //     if (direction == "down") {
+    //         // stop before footer
+    //         $(".btt").insertBefore($(".footer"));
+    //         // remove animation, because only needed at heading
+    //         $(".btt__sticky").css("animation", "none");
+    //         // stick on top of footer
+    //         $(".btt__sticky").css("position", "absolute");
+    //         $(".btt__sticky").css("bottom", "0");
+    //         $(".btt__sticky").css("right", "5vw");
+    //     } else {
+    //         // back to fixed when scrolled up
+    //         $(".btt__sticky").css("position", "fixed");
+    //         $(".btt__sticky").css("bottom", "5vw");
+    //         $(".btt__sticky").css("right", "5vw");
+    //     }
+    // }, {
+    //     // delay
+    //     offset: "70rem"
+    // });
 
     // scroll to header
     $(".js--scroll-to-header").click(function() {
